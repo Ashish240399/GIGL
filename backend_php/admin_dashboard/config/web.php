@@ -14,10 +14,7 @@ $config = [
     'components' => [
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
-            'cookieValidationKey' => 'LKWuVlIDiAvAaJGVe0uLTDlEGTxcc-EM',
-            'parsers' => [
-                'application/json' => 'yii\web\JsonParser',
-            ]
+            'cookieValidationKey' => '4n1yfHd-hJuOVH5SIs9oViE645Edj5kT',
         ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
@@ -40,25 +37,20 @@ $config = [
             'targets' => [
                 [
                     'class' => 'yii\log\FileTarget',
-                    'levels' => ['error', 'warning','info'],
+                    'levels' => ['error', 'warning'],
                 ],
             ],
         ],
-        'db' => [
-            'class' => 'yii\db\Connection',
-            'dsn' => 'mysql:host=localhost;dbname=gigl',
-            'username' => 'root',
-            'password' => '@Ashish7797',
-            'charset' => 'utf8',
-        ],
+        'db' => $db,
+        
         'urlManager' => [
             'enablePrettyUrl' => true,
-            'enableStrictParsing' => true,
             'showScriptName' => false,
             'rules' => [
-                ['class' => 'yii\rest\UrlRule', 'controller' => 'user'],
+                'user' => 'user/index',
             ],
         ],
+        
     ],
     'params' => $params,
 ];
